@@ -1,33 +1,18 @@
-import subprocess  #it help to run the linux comands
-          # subprocess.Popen(["terminator"])    it open the terminal form the python 
+import subprocess  
 
-
-# ======================
-# CONFIG
-# ======================
-WAKE_WORD = "shogun"    #  raiden is whatching 
-
+WAKE_WORD = "shogun"    
 COMMANDS = {
-    "open terminal": ["terminator"],    #left what usr say      spoken command : system command
+    "open terminal": ["terminator"],    
     "open brave": ["brave-browser"],
-    "open btop": ["terminator", "-e" , "btop --utf-force"]
-}
+    "open btop": ["terminator", "-e" , "btop --utf-force"]}
 
-# ======================
-# CORE LOGIC
-# ======================
 def parse_command(text):
-    text = text.lower()   #lower
-
+    text = text.lower()  
     if WAKE_WORD not in text:
         return None
-
-    # Remove wake word
     text = text.replace(WAKE_WORD, "").strip()
-
     return text
-
-
+          
 def execute_command(command):
     if command in COMMANDS:
         try:
@@ -37,11 +22,6 @@ def execute_command(command):
             print("[Shogun]: Application not found.")
     else:
         print(f"[Shogun]: Command not recognized.'{command}'")
-
-
-# ======================
-# MAIN LOOP (TEXT MODE)
-# ======================
 if __name__ == "__main__":
     print(f"myShogun Prototype Online. Wake word: '{WAKE_WORD}'")
 
