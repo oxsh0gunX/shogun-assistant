@@ -15,6 +15,11 @@ This project is designed as a learning-based prototype evolving into a structure
 - Terminal wrapping for TUI applications (e.g., btop)
 - Error handling for missing applications
 - Prototype development tracking
+- Added logging system with file output
+- Implemented global and wake-word exit handling
+- Added fuzzy command matching using difflib
+- Fixed input spacing issues
+- Improved command execution flow
 
 ---
 
